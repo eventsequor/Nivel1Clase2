@@ -1,11 +1,67 @@
 package com.sophos.Capacitacion.Nivel1Clase2;
 
+import com.sophos.Capacitacion.Nivel1Clase2.Clase4.Apartamentos;
+import com.sophos.Capacitacion.Nivel1Clase2.Clase4.Constantes;
+import com.sophos.Capacitacion.Nivel1Clase2.Clase4.Edificacion;
+import com.sophos.Capacitacion.Nivel1Clase2.Clase4.Preguntas;
+
 /**
  * Hello world!
  *
  */
 public class App {
 	public static void main(String[] args) {
+
+		Preguntas avion = new Preguntas();
+		avion.volar(30);
+		System.out.println("La altura actual es: " + avion.getAlturaConRespectoAlPiso());
+		System.out.println("S");
+//		System.out.println("Resultado es: "+ avion.sumar(5, 6));
+
+//		System.out.println("INTENTO 1");
+//		if(avion.volar(25)) {
+//			System.out.println("El avión despegó");
+//		}else {
+//			System.out.println("El avión se estrello");
+//		}
+//		
+//		if(avion.volar(10)) {
+//			System.out.println("El avión despegó");
+//		}else {
+//			System.out.println("El avión se estrello");
+//		}
+//		
+
+//		Edificacion objEdificacioin = new Edificacion();
+//		Edificacion objEdificacioin2 = new Edificacion();
+//		
+//		objEdificacioin2.setAreaConstruida(75);
+//		objEdificacioin2.numeroDePisos = 5;
+//		
+//		objEdificacioin.setAreaConstruida(70);
+//		objEdificacioin.numeroDePisos = 5;
+//		objEdificacioin.setNumeroDePuertas(5);
+//		
+//
+//		System.out.println("Numero de pisos objeto 1: " + objEdificacioin.numeroDePisos);
+//		System.out.println("Área construida objeto 1: " + objEdificacioin.getAreaConstruida()+"\n");
+//		
+//		
+//		System.out.println("Numero de pisos objeto 2: " + objEdificacioin2.numeroDePisos);
+//		System.out.println("Área construida objeto 2: " + objEdificacioin2.getAreaConstruida());
+//
+//		System.out.println("Area de colombia: " + Constantes.AREA_DE_COLOMBIA);
+//		
+//		System.out.println("#############################################");
+//		
+//		
+//		Apartamentos objApar = new Apartamentos();
+//		
+//		objApar.setAreaConstruida(42);
+
+	}
+
+	public void clase3() {
 		System.out.println("Hello World!");
 
 		byte variableByte = 65; // A - 10000001 -128 HASTA 127
@@ -59,6 +115,5 @@ public class App {
 			System.out.println("La opcion no existe");
 			break;
 		}
-
 	}
 }
