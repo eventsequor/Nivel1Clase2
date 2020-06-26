@@ -1,8 +1,13 @@
 package com.sophos.Capacitacion.Nivel1Clase2;
 
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import com.libreria.Libreria.Calculadora;
 import com.sophos.Capacitacion.Nivel1Clase2.Clase4.Apartamentos;
 import com.sophos.Capacitacion.Nivel1Clase2.Clase4.Constantes;
 import com.sophos.Capacitacion.Nivel1Clase2.Clase4.Edificacion;
+import com.sophos.Capacitacion.Nivel1Clase2.Clase4.EntradasSalidas;
 import com.sophos.Capacitacion.Nivel1Clase2.Clase4.Preguntas;
 
 /**
@@ -11,7 +16,34 @@ import com.sophos.Capacitacion.Nivel1Clase2.Clase4.Preguntas;
  */
 public class App {
 	public static void main(String[] args) {
+		clase6();
 
+	}
+
+	public static void clase6() {
+
+		EntradasSalidas io = new EntradasSalidas();
+		System.out.println(io.lectorArchivoPlano());
+		
+		
+		String variable1 = io.lecturaConsola("Por favor digite el valor uno ");
+		String variable2 = io.lecturaConsola("Por favor digite el valor dos");
+		Calculadora objCalculadora = new Calculadora();
+
+		System.out.println("El resultado de la suma es: "
+				+ objCalculadora.suma(Integer.parseInt(variable1), Integer.parseInt(variable2)));
+
+//		WebDriver objWebDriver = new ChromeDriver();
+//		
+
+//		System.out.println(objCalculadora.resta(5, 7));
+//		System.out.println(objCalculadora.multiplicacion(5, 7));
+//		System.out.println(objCalculadora.division(5, 7));
+//		System.out.println(objCalculadora.modulo(13, 2));
+
+	}
+
+	public void clase5() {
 		Preguntas avion = new Preguntas();
 		avion.volar(30);
 		System.out.println("La altura actual es: " + avion.getAlturaConRespectoAlPiso());
@@ -58,7 +90,6 @@ public class App {
 //		Apartamentos objApar = new Apartamentos();
 //		
 //		objApar.setAreaConstruida(42);
-
 	}
 
 	public void clase3() {
