@@ -16,9 +16,15 @@ import com.sophos.Capacitacion.Nivel1Clase2.Clase4.Preguntas;
  */
 public class App {
 	public static void main(String[] args) {
-		clase6();
+//		clase6();
+		Driver objDriver = new Driver();
+//		objDriver.navegadorGoogle();
+//		objDriver.navegadorFire();
+		objDriver.navegadorInternetExplore();
 
 	}
+	
+	
 
 	public static void clase6() {
 
