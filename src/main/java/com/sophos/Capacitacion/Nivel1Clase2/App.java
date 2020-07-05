@@ -1,6 +1,10 @@
 package com.sophos.Capacitacion.Nivel1Clase2;
 
+import java.util.ArrayList;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import com.libreria.Libreria.Calculadora;
@@ -18,20 +22,42 @@ public class App {
 	public static void main(String[] args) {
 //		clase6();
 		Driver objDriver = new Driver();
-//		objDriver.navegadorGoogle();
-//		objDriver.navegadorFire();
-		objDriver.navegadorInternetExplore();
+		objDriver.lanzarNavegador("google");
+		objDriver.navegarA("https://www.google.com");
+		WebElement cajaTexto = objDriver.getDriver()
+				.findElement(By.xpath("" + "//*[@id=\"tsf\"]/div[2]/div[1]/div[1]/div/div[2]/input"));
+		cajaTexto.sendKeys("Visual Studio");
+
+		WebElement cajaTexto2 = objDriver.getDriver().findElement(By.name("q"));
+//		cajaTexto2.clear();
+		cajaTexto2.sendKeys(" Code");
+
+		cajaTexto2.submit();
+		try {
+			Thread.sleep(2000); // Este tiempo se describe en mili segundos
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		ArrayList<WebElement> listaElementos = (ArrayList<WebElement>) objDriver.getDriver()
+				.findElements(By.className("LC20lb DKV0Md"));
+		
+		System.out.println("Se han encontrado "+listaElementos.size()+" elementos");
+
+		try {
+			Thread.sleep(5000); // Este tiempo se describe en mili segundos
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+
+		objDriver.cierreNavegador();
 
 	}
-	
-	
 
 	public static void clase6() {
 
 		EntradasSalidas io = new EntradasSalidas();
 		System.out.println(io.lectorArchivoPlano());
-		
-		
+
 		String variable1 = io.lecturaConsola("Por favor digite el valor uno ");
 		String variable2 = io.lecturaConsola("Por favor digite el valor dos");
 		Calculadora objCalculadora = new Calculadora();
