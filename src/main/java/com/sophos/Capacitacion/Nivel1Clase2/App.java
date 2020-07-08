@@ -19,7 +19,18 @@ import com.sophos.Capacitacion.Nivel1Clase2.Clase4.Preguntas;
  *
  */
 public class App {
+
 	public static void main(String[] args) {
+		EjercicioRandom objEjer = new EjercicioRandom();
+		objEjer.arregloPrimitivo();
+
+	}
+
+	public void clase9() {
+
+	}
+
+	public void clase8() {
 //		clase6();
 		Driver objDriver = new Driver();
 		objDriver.lanzarNavegador("google");
@@ -40,8 +51,8 @@ public class App {
 		}
 		ArrayList<WebElement> listaElementos = (ArrayList<WebElement>) objDriver.getDriver()
 				.findElements(By.className("LC20lb DKV0Md"));
-		
-		System.out.println("Se han encontrado "+listaElementos.size()+" elementos");
+
+		System.out.println("Se han encontrado " + listaElementos.size() + " elementos");
 
 		try {
 			Thread.sleep(5000); // Este tiempo se describe en mili segundos
@@ -50,7 +61,6 @@ public class App {
 		}
 
 		objDriver.cierreNavegador();
-
 	}
 
 	public static void clase6() {
