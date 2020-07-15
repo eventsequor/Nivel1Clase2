@@ -9,18 +9,24 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.ie.InternetExplorerOptions;
 
 public class Driver {
-	private WebDriver driver;
+	private static WebDriver driver;
 
 	public Driver() {
 
 	}
 
-	public WebDriver getDriver() {
+	public static WebDriver getDriver() {
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return driver;
 	}
-
-	public void setDriver(WebDriver driver) {
-		this.driver = driver;
+	
+	public static void setDriver(WebDriver driverX) {
+		driver = driverX;
 	}
 
 	public void lanzarNavegador(String navegador) {

@@ -6,6 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 import com.libreria.Libreria.Calculadora;
 import com.sophos.Capacitacion.Nivel1Clase2.Clase4.Apartamentos;
@@ -13,6 +14,12 @@ import com.sophos.Capacitacion.Nivel1Clase2.Clase4.Constantes;
 import com.sophos.Capacitacion.Nivel1Clase2.Clase4.Edificacion;
 import com.sophos.Capacitacion.Nivel1Clase2.Clase4.EntradasSalidas;
 import com.sophos.Capacitacion.Nivel1Clase2.Clase4.Preguntas;
+import com.sophos.Capacitacion.Nivel1Clase2.Factory.Animales;
+import com.sophos.Capacitacion.Nivel1Clase2.Factory.Leon;
+import com.sophos.Capacitacion.Nivel1Clase2.Factory.Vaca;
+import com.sophos.Capacitacion.Nivel1Clase2.PageObject.VistaHomeMercadoLibre;
+import com.sophos.Capacitacion.Nivel1Clase2.PageObject.VistaResultados;
+import com.sophos.Capacitacion.Nivel1Clase2.Singleton.PatronSingleton;
 
 /**
  * Hello world!
@@ -21,13 +28,50 @@ import com.sophos.Capacitacion.Nivel1Clase2.Clase4.Preguntas;
 public class App {
 
 	public static void main(String[] args) {
-		EjercicioRandom objEjer = new EjercicioRandom();
-		objEjer.arregloPrimitivo();
-
+		App app = new App();
+		app.mercadoLibreClase11();
+	}
+	
+	public void mercadoLibreClase11() {
+		Driver objDriver = new Driver();
+		objDriver.lanzarNavegador("google");
+		objDriver.navegarA("https://www.mercadolibre.com.co/");
+		VistaHomeMercadoLibre vistaHome = new VistaHomeMercadoLibre(objDriver.getDriver());
+		vistaHome.setTextAndLookFor("silla gamer");
+		VistaResultados resultados = new VistaResultados(objDriver.getDriver());
+		resultados.seleccionePrimerElemento();
+		
+		try {
+			Thread.sleep(5000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		objDriver.cierreNavegador();
+	}
+	
+	public void clase10() {
+		Animales leon = new Leon();
+		Animales vaca = new Vaca();
+		System.out.println(leon.NombreAnimal());
+		System.out.println(vaca.NombreAnimal());
+		
+		WebDriver driver = new FirefoxDriver();
+		driver.get("");
+		
+		
+		
+		PatronSingleton objSingleton = PatronSingleton.getInstancia("BD_1");
+		objSingleton.setNombreBaseDatos("BD_2");
+		System.out.println("Nombre base de datos: " + objSingleton.getNombreBaseDatos());
+		
+		PatronSingleton objSingleton2 = PatronSingleton.getInstancia("BD_2");
+		System.out.println("Nombre base de datos: " + objSingleton2.getNombreBaseDatos());
 	}
 
 	public void clase9() {
-
+//		EjercicioRandom objEjer = new EjercicioRandom();
+//		objEjer.arregloPrimitivo();
 	}
 
 	public void clase8() {
